@@ -1,6 +1,50 @@
 'use strict';
 
-// CONDITIONS
+// CONDITIONALS
+// Truthy & Falsey
+
+// Things that are FALSEY
+let falseyArray = [
+    0, "", null, false, NaN, null, undefined
+];
+
+// everything else is TRUTHY
+
+//IF, ELSE, IF-ELSE Statements
+// checks condition, runs code block if condition is met
+let a = 0
+if (a== 0) {
+    console.log("yay");
+} else {
+    console.log("nay");
+}
+
+let b = 10;
+if (b == 1) {
+    console.log("equals 1!");
+} else if (b == 2) {
+    console.log("  equals 2");
+} else {
+    console.log("not 1 or 2");
+}
+
+let c = 2;
+c == 3 ? console.log("c = 3") : console.log("c is not 3");
+
+// Equality & Type
+"1" == 1 ? console.log(true) : console.log(false);
+"1" === 1 ? console.log(true) : console.log(false);
+
+// AND && and OR || operators
+if (1 == 1 && 2 == 2) {
+    console.log("this works");
+}
+
+if (1 == 2 || 2 == 2) {
+    console.log("one OR other works");
+}
+
+
 //1.
 let strictA = true;
 let strictB = 1;
