@@ -159,3 +159,15 @@ while (keepGoing) {
     }
 };
 
+//2.
+let B = 100
+while (B <= 200) {
+    if (B % 2 == 0) {
+        console.log("-");
+    } else {
+            console.log("*");
+        }
+    B++;
+    console.log(B);
+};
+
