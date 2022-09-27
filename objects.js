@@ -110,3 +110,5 @@ let user = {
     name: "John",
     years: 30
 };
+
+(`${name}`, age = $[years]`) = user
