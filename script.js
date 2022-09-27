@@ -103,10 +103,10 @@ for (let i = 0; i < 10; i++){
     console.log(i)
 };
 
+// WHILE: checks condition first
 let puppies = 0;
 let notEnoughPuppies = true;
 
-// WHILE: checks condition first
 while (notEnoughPuppies) {
     console.log("Another puppy");
     puppies++;
@@ -155,6 +155,7 @@ while (keepGoing) {
 
     if (A > 201) {
         keepGoing = false; 
+        console.log("end");
     }
 };
 
