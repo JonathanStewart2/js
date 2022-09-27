@@ -260,3 +260,9 @@ switch (today) {
     default:
         console.warn("Not a valid day");
 }
+
+
+//  TERNARY IF STATEMENTS
+let rightNow = new Date();
+let greeting = "Good " + (rightNow.getHours() > 17 ? "evening" : "day.")
+console.log(greeting)
