@@ -101,3 +101,12 @@ for (let i = 0; i < myArray.length; i++) {
 for (let item of myArray) {
     console.log(item);
 }
+
+
+
+// EXERCISES
+//1.
+let user = {
+    name: "John",
+    years: 30
+};
