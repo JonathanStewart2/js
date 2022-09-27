@@ -214,28 +214,49 @@ for (let count = 1; count<11; count++) {
 
 
 //5. Switch case day scenario
-let day = "Saturday"
-switch (day) {
-    case "Monday":
-        console.log("It is only Monday!");
-    case "Tuesday":
-        console.log("It's a Tuesday, 3 more to go!");
-    case "Wednesday":
-        console.log("Middle of the week");
-    case "Thursday":
-        console.log("Nearly the weekend");
-    case "Friday":
-        console.log("TFIF!");
-    case "Saturday":
-        console.log("Weekend woohoo!");
-    case "Sunday":
-        console.log("Uh oh, work tomorrow :( ");
-        break;
-    default:
-        console.warn("Not a valid day");
-}
+// let day = "Saturday"
+// switch (day) {
+//     case "Monday":
+//         console.log("It is only Monday!");
+//     case "Tuesday":
+//         console.log("It's a Tuesday, 3 more to go!");
+//     case "Wednesday":
+//         console.log("Middle of the week");
+//     case "Thursday":
+//         console.log("Nearly the weekend");
+//     case "Friday":
+//         console.log("TFIF!");
+//     case "Saturday":
+//         console.log("Weekend woohoo!");
+//     case "Sunday":
+//         console.log("Uh oh, work tomorrow :( ");
+//         break;
+//     default:
+//         console.warn("Not a valid day");
+// }
 
 let currentDate = new Date();
 console.log(currentDate);
 let today = currentDate.getDay();
 console.log(today);
+
+switch (today) {
+    case 0:
+        console.log("Uh oh, work tomorrow :( ");
+        break;
+    case 1:
+        console.log("It is only Monday!");
+    case 2:
+        console.log("It's a Tuesday, 3 more to go!");
+    case 3:
+        console.log("Middle of the week");
+    case 4:
+        console.log("Nearly the weekend");
+    case 5:
+        console.log("TFIF!");
+    case 6:
+        console.log("Weekend woohoo!");
+        break;
+    default:
+        console.warn("Not a valid day");
+}
