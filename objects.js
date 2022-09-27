@@ -33,9 +33,36 @@ console.log(rest);
 const[g,,i,j,k] = myKatanas
 console.log(g);
 console.log(i);
+// DESTRUCTING OBJECTS
+const greatsword = {
+    damage: 10,
+    weight: 12,
+    value: 3
+}
 
+let {damage, weight} = greatsword;
+console.log(`The Greatsword does ${damage}pts damage and is ${weight}kg of weight`); 
 
+// DEFAULT VALUES FOR ARRAYS
+const rgb = [,,200];
+const [red = 255, green, blue = 255] = rgb;
+console.log(`R: ${red}, G: ${green}, B: ${blue}`);
 
+// NESTED DESTRUCTING
+const player = {
+    name: "Bob McGraw",
+    class: "Paladin",
+    stats: {HP:100, MP:25, STR:10}
+}
+
+const {name, stats: {HP, MP, STR, INT = 5} } = player
+
+console.log(`${name} has ${HP}hp and ${INT} intelligence`);
+
+// NESTED ARRAY DESTRUCTING
+const color = ['#FF00FF', [255, 0, 255], 'rgb(255, 0, 255)'];
+const [hex, [r, gn, bl]] = color;
+console.log(hex, r, gn, bl);
 
 
 //1.
@@ -44,9 +71,9 @@ console.log(i);
 // darthVader["weapon"] = "lightsaber";
 // darthVader["sith"] = true;
 let darthVader = {
-    "allegiance" : "empire",
-    "weapon" : "lightsaber",
-    "sith" : true,
+    allegiance : "empire",
+    weapon : "lightsaber",
+    sith : true,
 }
 
 console.log(darthVader);
