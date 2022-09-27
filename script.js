@@ -111,10 +111,9 @@ while (notEnoughPuppies) {
     console.log("Another puppy");
     puppies++;
 
-    if (puppies>20) {
+    if (puppies > 20) {
         notEnoughPuppies = false;
-        let enough = "Enough puppies!";
-        console.log(enough);
+        console.log("Enough puppies");
     }
 };
 
@@ -124,7 +123,38 @@ let canIRun = false;
 do {
     x++;
     console.log(x);
-} while (canIRun);;
+} while (canIRun);
 
 
+let someAmount = 4;
+switch (someAmount) {
+    case 1:
+        console.log("one");
+        break;
+    case 2:
+        console.log("two");
+        break;
+    case 3:
+        console.log("three");
+        break;
+    case 4:
+        console.log("four");
+        break;
+    default:
+        console.log("nope!")
+};
+
+// ITERATION EXERCISES
+//1.
+let A = 100
+let keepGoing = true
+
+while (keepGoing) {
+    console.log(A);
+    A++;
+
+    if (A > 201) {
+        keepGoing = false; 
+    }
+};
 
