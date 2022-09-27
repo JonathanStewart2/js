@@ -98,24 +98,25 @@ console.log(myInventory);
 
 
 // ITERATION
+
 // FOR
 for (let i = 0; i < 10; i++){
-    console.log(i)
-};
+    console.log(`i = ${i}`)
+}
 
 // WHILE: checks condition first
-let puppies = 0;
-let notEnoughPuppies = true;
+let increment = 0;
+let condition = true;
 
-while (notEnoughPuppies) {
-    console.log("Another puppy");
-    puppies++;
+while (condition) {
+    console.log(`increment = ${increment}`);
+    increment++;
 
-    if (puppies > 20) {
-        notEnoughPuppies = false;
-        console.log("Enough puppies");
+    if (increment > 20) {
+        condition = false;
+        console.log(`${increment} is enough!`);
     }
-};
+}
 
 // DO WHILE: executes onces first before checking condition
 let x = 0;
@@ -125,7 +126,9 @@ do {
     console.log(x);
 } while (canIRun);
 
-
+// SWITCH CASES
+// run until a break or return
+// can be more effective than large if-else-if statements
 let someAmount = 4;
 switch (someAmount) {
     case 1:
@@ -141,8 +144,8 @@ switch (someAmount) {
         console.log("four");
         break;
     default:
-        console.log("nope!")
-};
+        console.warn("nope!")
+}
 
 // ITERATION EXERCISES
 //1.
@@ -157,17 +160,56 @@ while (keepGoing) {
         keepGoing = false; 
         console.log("end");
     }
-};
+}
 
 //2.
 let B = 100
 while (B <= 200) {
     if (B % 2 == 0) {
-        console.log("-");
+        console.log(`${B} -`);
     } else {
-            console.log("*");
+            console.log(`${B} *`);
         }
     B++;
-    console.log(B);
-};
+}
+
+//3. print 1-10 10 times
+let continuePrinting = true
+let count = 1
+while (continuePrinting) {
+    console.log(`Current print number: ${count}`);
+    
+    for (let i = 1; i < 11; i++) {
+        console.log(i);
+    }
+    count++;
+    if (count == 11) {
+        continuePrinting = false
+    }
+}
+
+//4 Use FOR instead of WHILE
+//4.1
+for (let A = 100; A < 201; A++) {
+    console.log(`FOR LOOP ${A}`);
+}
+
+//4.2
+for (B=100; B < 201; B++) {
+    if (B % 2 == 0) {
+        console.log(`FOR ${B} -`);
+    } else {
+            console.log(`FOR ${B} *`);
+        }
+}
+
+//4.3
+for (let count = 1; count<11; count++) {
+    console.log(`FOR LOOP ONLY - This is print number ${count}`);
+    
+    for (let i = 1; i < 11; i++) {
+        console.log(i);
+    }
+}
+
 
