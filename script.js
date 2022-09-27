@@ -19,7 +19,7 @@ console.log("My name is " + firstName + " " + lastName + ". I am from " + myLoca
 let carName = "Nissan";
 let carMake = "GT-R";
 
-console.log("My favourite car make is" + carName + " and the model is " + carMake);
+console.log("My favourite car make is", carName, " and the model is ", carMake);
 
 let colouredOutput = "This is a colourful output";
 
@@ -31,10 +31,16 @@ let b = "12345";
 let c = 54321;
 let d = true;
 let e = {code: "Javascript"}
-console.log(a);
-console.log(b)
+console.log(a + " " + typeof(a));
+console.log(b + " " + typeof(b));
+console.log(c + " " + typeof(c));
+console.log(d + " " + typeof(d));
+console.log(e + " " + typeof(e));
 
-
+let totalMoney = 4000
+let moneyPaidSoFar = 2348
+let moneyLeft = totalMoney-moneyPaidSoFar
+console.log("The total bill is £",totalMoney, " the amount remaining is £", moneyLeft)
 
 
 
