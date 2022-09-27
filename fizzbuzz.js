@@ -36,7 +36,32 @@ for (let i = 1; i < 101; i++) {
 }
 
 
-//
+// TERNARY IFs
 for (let i = 1; i < 101; i++) {
     console.log((i%3==0 ? "Fizz" : "") + (i%5==0 ? "Buzz": "") || i);
+}
+
+
+
+// STRING CONCATS
+for (let i = 1; i <= 100; i++) {
+    let str;
+
+    if (i%3) {
+        str = "";
+    } else {
+        str = "Fizz";
+    }
+
+    if (i%5) {
+        str = `${str}`;
+    } else {
+        str = `${str}Buzz`;
+    }
+
+    if (str) {
+        console.log(str);
+    } else {
+        console.log(i);
+    }
 }
