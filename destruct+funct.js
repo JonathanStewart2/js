@@ -17,4 +17,13 @@ console.log( name ); // John
 console.log( age ); // 30
 console.log( isAdmin ); // false
 
+
 // FUNCTIONS
+//1.
+function subtract(x, y){
+    return (x-y);
+}
+console.log(subtract(10,5));
+console.log(subtract(100,67));
+console.log(subtract(10,50));
+console.log(subtract("hello","o"));
