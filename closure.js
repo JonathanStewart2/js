@@ -146,4 +146,26 @@ const getValue = (callback) => {
     callback(choice);
 }
 
-getValue(valueIncrease);
+//getValue(valueIncrease);
+
+
+// EXPERIMENTING
+const modulo10 = (value) => {
+    console.log(value%10);
+}
+
+const powerIt = (value) => {
+    console.log(value * value);
+}
+
+const setValue = (alterIt, num1) => {
+    alterIt(num1);
+}
+
+setValue(modulo10, 99);
+setValue(modulo10, 2);
+setValue(modulo10, 100);
+
+for (let i=0; i<10; i++) {
+    setValue(powerIt, i);
+}
