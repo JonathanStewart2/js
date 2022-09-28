@@ -183,3 +183,19 @@ console.log("grade :",grade);
 console.log("others :", others);
 
 //object destructing
+let carObj = {
+    make: "Nissan",
+    model: "GT-R",
+    colour: "black"
+}
+console.log("initial car object: ", carObj);
+
+let carMake = carObj.make;
+console.log(carMake);
+
+carObj = {...carObj, ...{price: "90k"}};
+console.log("Updated car object :", carObj);
+
+
+// FUNCTIONS / METHODS
+// set of instructions we execute or reuse
