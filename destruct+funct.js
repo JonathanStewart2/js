@@ -131,6 +131,7 @@ const bye = (firstName, lastName) => {
     alert(`Bye ${firstName} + ${lastName}` );
 }
 
+const fullname = (f, s) => console.log(f+s);
 //greet("BoB", "Smith");
 
 const userInput = (callback) => {
@@ -140,4 +141,30 @@ const userInput = (callback) => {
 }
 
 //userInput(greet);
-userInput(bye);
+// userInput(bye);
+// userInput(fullname);
+
+// PROMISES
+// operate that hasn't been completed, they have 3 states:
+// - fulfilled
+// - rejected
+// - pending
+
+let prom = new Promise((resolve, reject)=>{
+    let x = 3 + 5;
+    if (x==8){
+        resolve("Success");
+    } else {
+        reject("Failed");
+    }
+})
+
+//try-catch-finally
+prom.then((response) => {
+    console.log(`Then block - status is: ${response}`);
+}).catch((response) => {
+    console.log(`Catch block - status is: ${response}`);
+    console.error(response);
+}).then(() => {
+    console.log(`Finally block - runs regardless`);
+})    
