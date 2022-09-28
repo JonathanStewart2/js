@@ -54,7 +54,7 @@ let powerUp2 = (n3,n4) => Math.pow(n3,n4);
 console.log(powerUp2(4,2));
 
 
-// HAVING FUN
+// HAVING FUN ---------------------------
 console.log("");
 
 const funFunct = (n) => {
@@ -68,3 +68,76 @@ const funFunct = (n) => {
 }
 
 funFunct(5);
+
+// object creating function
+const charCreation = (name) =>{
+    let x = Math.floor(Math.random() * 10);
+    let charClass;
+    if (x<4){
+        charClass = "Paladin";
+    } else if (x<7){
+        charClass = "Warrior";
+    } else {
+        charClass = "Priest";
+    }
+    let hp = Math.floor(Math.random() * 100);
+    let charObj = {
+        characterName: name,
+        characterClass: charClass,
+        health: hp 
+    }
+    console.log(`Your name is ${name}. You are a ${charClass} 
+    and you have ${hp}HP.`);
+    return charObj;
+}
+
+charCreation("Felix");
+charCreation("Hector");
+let player3 = charCreation("Jin")
+
+console.log(player3);
+player3.health += 10;
+console.log(player3);
+document.write(`${player3.characterName} the ${player3.characterClass} has ${player3.health}HP.<br>`);
+const combat = (character) => {
+    while (character.health > 0){
+        let damage = Math.floor(Math.random() * 10);
+        console.log(`You take ${damage}pts of damage`);
+        document.write(`\nYou take ${damage}pts of damage`);
+        character.health -= damage
+        console.log(`${character.characterName} has ${character.health}HP left`);
+        document.write(`${character.characterName} has ${character.health}HP left`);
+        document.write("<br>");
+    }
+    console.log(`${character.characterName} has died!`);
+    document.write(`${character.characterName} has died!`);
+}
+
+combat(player3);
+
+//document.write(player3);
+
+
+
+// Callbacks - pass in a function as argument/parameter
+
+const greet = (firstName, lastName) => {
+    console.log(`${firstName} + ${lastName}`);
+    alert(`Hello ${firstName} + ${lastName}` );
+}
+
+const bye = (firstName, lastName) => {
+    console.log(`${firstName} + ${lastName}`);
+    alert(`Bye ${firstName} + ${lastName}` );
+}
+
+//greet("BoB", "Smith");
+
+const userInput = (callback) => {
+    let fname = prompt("Enter your first name: ");
+    let sname = prompt("Enter your surname: ");
+    callback(fname, sname);
+}
+
+//userInput(greet);
+userInput(bye);
