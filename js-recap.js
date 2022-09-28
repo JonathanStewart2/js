@@ -42,9 +42,81 @@ console.log(1 == "1"); //true
 console.log(1 === "1"); //false
 
 
+
 // ITERATION
 // loops - repeat instructions for certain amount of time
 // FOR - when you know the number of iterations required
 // WHILE: continue loop until condition is met
 // DO WHILE: execute at least once and continue until condition is met
 
+// for (initialization, condition, iterator) {statements}
+for (let i = 1; i < 11; i++){
+    console.log(i);
+}
+
+// while
+let x = 6
+
+while (x < 5){
+    console.log(x);
+    x++;
+} // doesn't run as x is > 5
+
+// do-while
+do {
+    console.log("do-while working");
+} while (x < 5);   // runs once even though x > 5 to start with
+
+
+// CONDITIONALS
+// truthy/falsey - all values have inherent boolean value, defaults to truthy
+// falsey examples
+let g;
+console.log(typeof g);
+if (g){
+    console.log(true);
+} else {
+    console.log(false);
+}
+
+// IF statements: need else if using else if, if only if then don't always need else
+// if (condition) {statement} else {statement}
+// if (condition) {statement} else if (condition) {statement} else {statement}
+
+let temp = 26
+if (temp < 20){
+    console.log("Turn on heating");
+} else if (temp < 25){
+    console.log("time to get shorts on");
+} else {
+    console.log("put on the A/C")
+}
+
+
+// SWITCH CASES
+let day = "thurs";
+switch(day){
+    case "mon":
+        console.log("Day 1");
+        break;
+    case "tues":
+        console.log("Day 2");
+        break;
+    case "wed":
+         console.log("Day 3");
+         break;
+    case "thurs":
+         console.log("Day 4");
+         break;
+    case "fri":
+        console.log("Day 5");
+        break;
+    case "sat":
+        console.log("Day 6");
+        break;
+    case "sun":
+         console.log("Day 7");
+         break;
+    default:
+        console.log("error");
+}
