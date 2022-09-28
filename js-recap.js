@@ -199,3 +199,14 @@ console.log("Updated car object :", carObj);
 
 // FUNCTIONS / METHODS
 // set of instructions we execute or reuse
+// 3 ways to write:
+
+// function - global scope: can be called before being declared
+// function name(parameters){statements}
+myFun("normal function");
+
+function myFun(p){
+    console.log(p);
+}
+
+
