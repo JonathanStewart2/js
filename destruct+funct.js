@@ -52,3 +52,19 @@ console.log(powerUp(2,3));
 
 let powerUp2 = (n3,n4) => Math.pow(n3,n4);
 console.log(powerUp2(4,2));
+
+
+// HAVING FUN
+console.log("");
+
+const funFunct = (n) => {
+    if (n > 0){
+        console.log(n);
+        n-=1;
+        funFunct(n);
+    } else {
+        console.log(n);
+    }
+}
+
+funFunct(5);
