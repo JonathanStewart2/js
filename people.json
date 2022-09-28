@@ -1,0 +1,15 @@
+[{
+    "name": "ash",
+    "age": 12,
+    "job": "pokemon trainer"
+},
+{
+    "name": "brock",
+    "age": 17,
+    "job": "gym leader"
+},
+{
+    "name": "pikachu",
+    "age": 3,
+    "job": "pokemon"
+}]

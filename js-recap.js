@@ -120,3 +120,66 @@ switch(day){
     default:
         console.log("error");
 }
+
+
+// TERNARY STATEMENTS - ?
+// condition ? value-if-true : value-if-false
+let age = 10;
+let outcome = age > 18 ? "over 18" : "Under 18";
+console.log(outcome);
+console.log(age > 15 ? "over 15" : "Under 15");
+
+
+// OBJECTS: unordered collection of related data (key:value pairs)
+let person = {
+    name: "ash",
+    age: 12,
+    job: "child"
+}
+console.log("person", person);
+console.log(JSON.stringify(person)); //convert object to string
+
+// JSON - JavaScript Object Notation
+let jsonObj = `[{
+    name: "ash",
+    age: 12,
+    job: "pokemon trainer"
+},
+{
+    name: "brock",
+    age: 17,
+    job: "gym leader"
+}]`;
+console.log("JSON", jsonObj);
+
+// GET request
+fetch("people.json")
+.then(response => response.json())
+.then(data => console.log("fetch", data));
+
+
+// ARRAYS
+const myArr = [1,"2",3,4,5]
+const nameArr = ["bob", "jim", "sam"]
+console.log(myArr, nameArr);
+console.log(nameArr[1]);
+console.log(myArr[1]);
+nameArr.push("simon");
+console.log(nameArr);
+
+// DESTRUCTURING
+const [a1,a2,a3,a4,a5] = myArr;
+console.log(a2,a4);
+console.log(a1 + a2);
+console.log(a1+parseInt(a2)); //parseInt changes string to int
+// spread operator ...
+const[name1,name2,...rest] = nameArr;
+console.log(name2);
+console.log("rest:", rest);
+
+const grades = [33,45,24,64,24,53,25,73,14,58,96,45];
+const[,,,,grade,...others] = grades;
+console.log("grade :",grade);
+console.log("others :", others);
+
+//object destructing
