@@ -67,8 +67,8 @@ console.log(sine(180)); // 0
 console.log(sine(270)); // -1
 console.log(sine(360)); // 0
 // testing cos
-console.log(`Cos of 0 = ${cosine(0)}`); // 0
-console.log(`Cos of 90 = ${cosine(90)}`); // 1
-console.log(`Cos of 0 = ${cosine(180)}`); // 0
-console.log(`Cos of 0 = ${cosine(270)}``); // -1
-console.log(`Cos of 0 =cosine(360)); // 0
+console.log(`Cos of 0 = ${cosine(0)}`); //  1
+console.log(`Cos of 90 = ${cosine(90)}`); // 0
+console.log(`Cos of 180 = ${cosine(180)}`); // -1
+console.log(`Cos of 270 = ${cosine(270)}`); // 0
+console.log(`Cos of 360 = ${cosine(360)}`); // 1
