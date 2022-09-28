@@ -209,4 +209,22 @@ function myFun(p){
     console.log(p);
 }
 
+// function expressions - has to be initialised before called
+//myFun2("function expression"); // won't run
+const myFun2 = function(x){
+    console.log(x);
+}
+myFun2("function expression");
+
+// ARROW functions - concise way of writing expressions
+// if only doing 1 thing:
+const myFun3 = (z) => console.log(z);
+myFun("arrow statement");
+
+// arrow if doing more than 1 statement: 
+const myFun4 = (t,u) => {
+    let sum = t + u;
+    console.log(t, " + ",u, " = ", sum);
+}
+myFun4("arrow", "function")
 
