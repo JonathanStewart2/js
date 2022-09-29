@@ -45,33 +45,68 @@ const tangent = (deg) => {
 const inputArr = []
 const funcReq = []
 const historyArr = []
+const numArr = []
 
 const inputGather = (value) => {
     // put values inputted into an array
-    let input = parseInt(value);
-    inputArr.push(input);
-   // console.log(inputArr);
+    //let input = parseInt(value);
+    inputArr.push(value);
+    console.log(inputArr);
 }
 
 const inputFunct = (funct) => {
     // push requested functions into array
     funcReq.push(funct);
     console.log(funcReq);
+    createNumber();
+    if (funct == "sin" || funct == "cos" || funct == "tan" || funct == "sr") { 
+        let num = numArr.shift();
+        switch (funct){
+            case ("sr"):
+                calcOutput = squareRootEstimate(num);
+                checkEnd(calcOutput);
+                break;
+            case ("sin"):
+                calcOutput = sine(num);
+                checkEnd(calcOutput);
+                break;
+            case ("cos"):
+                calcOutput = cosine(num);
+                checkEnd(calcOutput);
+                break;
+            case ("tan"):
+                calcOutput = tangent(num);
+                checkEnd(calcOutput);
+                break;
+        }
+    }
+}
+
+const createNumber = () => {
+    let stringRep = inputArr.join("");
+    console.log(stringRep);
+    let intStringRep = parseInt(stringRep);
+    numArr.push(intStringRep);
+    console.log(`numArr is ${numArr}`);
+    inputArr.length = 0;
 }
 
 const calculate = () => {
     //go through array and pick first values and functions requested
-    console.log(inputArr);
-    let num1 = inputArr.shift();
+    if (inputArr){
+        createNumber();
+    }
+    console.log(numArr);
+    let num1 = numArr.shift();
     console.log(num1);
-    console.log(inputArr);
+    console.log(numArr);
 
     // if (inputArr.length > 0) {
     //     let num2 = inputArr.shift();    FIX THIS LATER
     // } else {
     //     num2 = 0;
     // }
-    let num2 = inputArr.shift();
+    let num2 = numArr.shift();
     let request = funcReq.shift();
 
     // switch to choose which calculation to perform
@@ -89,28 +124,12 @@ const calculate = () => {
             calcOutput = multiply(num1,num2);
             checkEnd(calcOutput);
             break;
-        case ("+"):
+        case ("/"):
             calcOutput = divide(num1,num2);
             checkEnd(calcOutput);
             break;
         case ("%"):
             calcOutput = percent(num1,num2);
-            checkEnd(calcOutput);
-            break;
-        case ("sr"):
-            calcOutput = percent(num1,num2);
-            checkEnd(calcOutput);
-            break;
-        case ("sin"):
-            calcOutput = sin(num);
-            checkEnd(calcOutput);
-            break;
-        case ("cos"):
-            calcOutput = cos(num);
-            checkEnd(calcOutput);
-            break;
-        case ("tan"):
-            calcOutput = tan(num);
             checkEnd(calcOutput);
             break;
     }
@@ -120,13 +139,15 @@ const calculate = () => {
 // check if further calc req
 const checkEnd = (calculation) => {
     console.log(calculation);
-    if (inputArr.length == 0){
+    if (numArr.length == 0){
         updateOutput(calculation);
     } else {
         console.warn("INPUT ARRAY NOT EMPTY");
+        window.alert("Error, refreshed calculator");
         // empty the array for now
         inputArr = []
         funcReq = []
+        numArr = []
     }
 }
 
@@ -136,20 +157,13 @@ const updateOutput = (value) => {
     output.value = value;
     // add new calculation to the history
     historyArr.push(value);
-    console.log(historyArr);
+    console.log(`HistoryArr is ${historyArr}`);
     const historyDisplay = document.getElementById("history");
-    
-    // run through the history array and display its contents
-    // HISTORY FUNCTION NOT WORKING
-    let forRun = historyArr.length;
-    let newString = ""
-    for (let i=0; i< forRun; i++){
- 
-        // let stringConversion = historyArr[i].toString();
-        // let historyConversion = historyDisplay.value;
-        // let newString = stringConversion + "\," + historyConversion;
-        historyDisplay.value = historyArr;
-    }
+    let historyString = historyArr.join("<br>");
+    console.log(`HistoryString is ${historyString}`);
+    historyDisplay.value = historyString;
+
+
 }
 
 
