@@ -41,17 +41,92 @@ const tangent = (deg) => {
     return Math.round(tanOfRad);
 };
 
-//--- GATHER INPUTS
-const inputGather = () => {
-    const input = document.getElementByValue("counter");
-    let inputArr = []
+//---------- GATHER INPUTS
+const inputArr = []
+const funcReq = []
+const output = document.getElementById("result");
+
+const inputGather = (value) => {
+    // put values inputted into an array
+    let input = parseInt(value);
+    inputArr.push(input);
+   // console.log(inputArr);
 }
 
-=
+const inputFunct = (funct) => {
+    // push requested functions into array
+    funcReq.push(funct);
+   console.log(funcReq);
+}
 
+const calculate = () => {
+    //go through array and pick first values and functions requested
+    console.log(inputArr);
+    let num1 = inputArr.shift();
+    console.log(num1);
+    console.log(inputArr);
+    let num2 = inputArr.shift();
+    let request = funcReq.shift();
 
+    let calcOutput = 0
+    switch (request) {
+        case ("+"):
+            calcOutput = addition(num1,num2);
+            checkEnd(calcOutput);
+            break;
+        case ("-"):
+            calcOutput = subtraction(num1,num2);
+            checkEnd(calcOutput);
+            break;
+        case ("*"):
+            calcOutput = multiply(num1,num2);
+            checkEnd(calcOutput);
+            break;
+        case ("+"):
+            calcOutput = divide(num1,num2);
+            checkEnd(calcOutput);
+            break;
+        case ("%"):
+            calcOutput = percent(num1,num2);
+            checkEnd(calcOutput);
+            break;
+        case ("sr"):
+            calcOutput = percent(num1,num2);
+            checkEnd(calcOutput);
+            break;
+        case ("sin"):
+            calcOutput = sin(num);
+            checkEnd(calcOutput);
+            break;
+        case ("cos"):
+            calcOutput = cos(num);
+            checkEnd(calcOutput);
+            break;
+        case ("tan"):
+            calcOutput = tan(num);
+            checkEnd(calcOutput);
+            break;
+    }
 
+}
 
+// check if further calc req
+const checkEnd = (calculation) => {
+    console.log(calculation);
+    if (inputArr.length == 0){
+        updateOutput(calculation);
+    } else {
+        console.warn("INPUT ARRAY NOT EMPTY");
+        // empty the array for now
+        inputArr = []
+        funcReq = []
+    }
+}
+
+// update the outcome
+const updateOutput = (value) => {
+
+}
 
 
 
