@@ -7,7 +7,7 @@ const divide = (num1, num2) => num1 / num2;
 const power = (num) => num * num;
 const remainder = (num1, num2) => num1 % num2;
 
-const discount = (num, percent) => {
+const percent = (num, percent) => {
     let discountPercentage = percent/100;
     return num - (num * discountPercentage);
 };
@@ -24,21 +24,22 @@ const squareRootEstimate = (num) => {
 };
 
 const sine = (deg) => {
+    console.log(`deg coming into sin function is ${deg}`);
     let radians = deg * (Math.PI/180);
     let sinOfRad = Math.sin(radians);
-    return Math.round(sinOfRad);
+    return sinOfRad.toFixed(3);
 }; 
 
 const cosine = (deg) => {
     let radians = deg * (Math.PI/180);
     let cosOfRad = Math.cos(radians);
-    return Math.round(cosOfRad);
+    return cosOfRad;
 };
 
 const tangent = (deg) => {
     let radians = deg * (Math.PI/180);
     let tanOfRad = Math.tan(radians);
-    return Math.round(tanOfRad);
+    return tanOfRad;
 };
 
 //---------- GATHER INPUTS
@@ -46,41 +47,6 @@ const inputArr = []
 const funcReq = []
 const historyArr = []
 const numArr = []
-
-const inputGather = (value) => {
-    // put values inputted into an array
-    //let input = parseInt(value);
-    inputArr.push(value);
-    console.log(inputArr);
-}
-
-const inputFunct = (funct) => {
-    // push requested functions into array
-    funcReq.push(funct);
-    console.log(funcReq);
-    createNumber();
-    if (funct == "sin" || funct == "cos" || funct == "tan" || funct == "sr") { 
-        let num = numArr.shift();
-        switch (funct){
-            case ("sr"):
-                calcOutput = squareRootEstimate(num);
-                checkEnd(calcOutput);
-                break;
-            case ("sin"):
-                calcOutput = sine(num);
-                checkEnd(calcOutput);
-                break;
-            case ("cos"):
-                calcOutput = cosine(num);
-                checkEnd(calcOutput);
-                break;
-            case ("tan"):
-                calcOutput = tangent(num);
-                checkEnd(calcOutput);
-                break;
-        }
-    }
-}
 
 const createNumber = () => {
     let stringRep = inputArr.join("");
@@ -136,6 +102,47 @@ const calculate = () => {
 
 }
 
+
+const inputGather = (value) => {
+    // put values inputted into an array
+    //let input = parseInt(value);
+    inputArr.push(value);
+    console.log(inputArr);
+}
+
+const inputFunct = (funct) => {
+    // push requested functions into array
+    funcReq.push(funct);
+    console.log(funcReq);
+    createNumber();
+    if (funct == "sin" || funct == "cos" || funct == "tan" || funct == "sr") { 
+        let num = numArr.shift();
+        let calcOutput = 0;
+        let request = funcReq.shift();
+        switch (request){
+            case ("sr"):
+                calcOutput = squareRootEstimate(num);
+                checkEnd(calcOutput);
+                break;
+            case ("sin"):
+                console.log(`Num going into sin calc is ${num}`);
+                calcOutput = sine(num);
+                console.log(`output from sin calc is ${calcOutput}`);
+                checkEnd(calcOutput);
+                break;
+            case ("cos"):
+                calcOutput = cosine(num);
+                checkEnd(calcOutput);
+                break;
+            case ("tan"):
+                calcOutput = tangent(num);
+                checkEnd(calcOutput);
+                break;
+        }
+    }
+}
+
+
 // check if further calc req
 const checkEnd = (calculation) => {
     console.log(calculation);
@@ -144,10 +151,10 @@ const checkEnd = (calculation) => {
     } else {
         console.warn("INPUT ARRAY NOT EMPTY");
         window.alert("Error, refreshed calculator");
-        // empty the array for now
-        inputArr = []
-        funcReq = []
-        numArr = []
+        // empty the arrays
+        inputArr.lenth = 0
+        funcReq.length = 0
+        numArr.lenth = 0
     }
 }
 
@@ -156,13 +163,16 @@ const updateOutput = (value) => {
     const output = document.getElementById("result");
     output.value = value;
     // add new calculation to the history
+    if (historyArr.length > 10) {
+        historyArr.pop()
+    } 
     historyArr.push(value);
     console.log(`HistoryArr is ${historyArr}`);
     const historyDisplay = document.getElementById("history");
-    let historyString = historyArr.join("<br>");
+    let historyString = historyArr.join(" ");
     console.log(`HistoryString is ${historyString}`);
-    historyDisplay.value = historyString;
-
+    historyDisplay.value = historyString
+    
 
 }
 
@@ -185,6 +195,7 @@ const updateOutput = (value) => {
 // console.log(squareRootEstimate(100));
 // // testing sine
 // console.log(sine(0)); // 0
+console.log(sine(45)); // 0.7
 // console.log(sine(90)); // 1
 // console.log(sine(180)); // 0
 // console.log(sine(270)); // -1
