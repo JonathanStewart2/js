@@ -44,7 +44,7 @@ const tangent = (deg) => {
 //---------- GATHER INPUTS
 const inputArr = []
 const funcReq = []
-const output = document.getElementById("result");
+const historyArr = []
 
 const inputGather = (value) => {
     // put values inputted into an array
@@ -56,7 +56,7 @@ const inputGather = (value) => {
 const inputFunct = (funct) => {
     // push requested functions into array
     funcReq.push(funct);
-   console.log(funcReq);
+    console.log(funcReq);
 }
 
 const calculate = () => {
@@ -65,9 +65,16 @@ const calculate = () => {
     let num1 = inputArr.shift();
     console.log(num1);
     console.log(inputArr);
+
+    // if (inputArr.length > 0) {
+    //     let num2 = inputArr.shift();    FIX THIS LATER
+    // } else {
+    //     num2 = 0;
+    // }
     let num2 = inputArr.shift();
     let request = funcReq.shift();
 
+    // switch to choose which calculation to perform
     let calcOutput = 0
     switch (request) {
         case ("+"):
@@ -125,7 +132,13 @@ const checkEnd = (calculation) => {
 
 // update the outcome
 const updateOutput = (value) => {
+    const output = document.getElementById("result");
+    output.value = value;
+    const historyString = document.getElementById("history");
+    historyArr.push(value);
+    
 
+    historyString.value = historyArr;
 }
 
 
