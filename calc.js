@@ -41,6 +41,21 @@ const tangent = (deg) => {
     return Math.round(tanOfRad);
 };
 
+//--- GATHER INPUTS
+const inputGather = () => {
+    const input = document.getElementByValue("counter");
+    let inputArr = []
+}
+
+=
+
+
+
+
+
+
+
+
 
 // // testing -----------------
 // console.log(addition(4,13));
@@ -75,26 +90,4 @@ const tangent = (deg) => {
 // console.log(`Tan of 360 = ${tangent(360)}`); // 0
 // ------------------------------------------
 
-const createPageTitles = () => {
-    let newTitle = document.createElement("title");
-    newTitle.innerText = ("Online Calculator");
-    document.head.appendChild(newTitle);
 
-    let topH1 = document.querySelector("h1");
-    topH1.innerText = "Online Calculator";
-    document.body.appendChild(topH1)
-}
-
-const createTopRow = () => {
-    let divEle = document.querySelector("div");
-    const button9 = document.createElement("button");
-    button9.innerText = "9";
-    divEle.append(button9);
-}
-
-const main = () => {
-    createPageTitles();
-    createTopRow();
-}
-
-main();

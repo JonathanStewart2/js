@@ -7,24 +7,67 @@
     <title>Online Calculator</title>
 </head>
 <body>
-    <form action="charactercreation" method="post">
-        <h4>Online Calculator</h4>
-        <fieldset>
-            <legend class="Calculator">Calculator</legend>
-            <input type="button" style="height:100px; width:100px; id="7" value="7" />
-            <input type="button" style="height:100px; width:100px; id="7" value="8" />
-            <input type="button" style="height:100px; width:100px; id="7" value="9" />
-            <br />
-            <input type="button" style="height:100px; width:100px; id="4" value="4" />
-            <input type="button" style="height:100px; width:100px; id="5" value="5" />
-            <input type="button" style="height:100px; width:100px; id="6" value="6" />
-            <br />
-            <input type="button" style="height:100px; width:100px; id="1" value="1" />
-            <input type="button" style="height:100px; width:100px; id="2" value="2" />
-            <input type="button" style="height:100px; width:100px; id="3" value="3" />
-        </fieldset>
-        
-    </form>
+    <main>
+        <h1>Online Calculator</h1>
+        <section>
+            <table>
+                
+                <th>
+                    <fieldset>
+                        <legend class="Calculator">Numbers</legend>
+                        <input type="button" style="height:100px; width:100px;" id="7" value="7" />
+                        <input type="button" style="height:100px; width:100px;" id="8" value="8" />
+                        <input type="button" style="height:100px; width:100px;" id="9" value="9" />
+                        <br />
+                        <input type="button" style="height:100px; width:100px;" id="4" value="4" />
+                        <input type="button" style="height:100px; width:100px;" id="5" value="5" />
+                        <input type="button" style="height:100px; width:100px;" id="6" value="6" />
+                        <br />
+                        <input type="button" style="height:100px; width:100px;" id="1" value="1" />
+                        <input type="button" style="height:100px; width:100px;" id="2" value="2" />
+                        <input type="button" style="height:100px; width:100px;" id="3" value="3" />
+                    </fieldset>
+                </th>
+                <th>
+                    <fieldset>
+                        <legend class="Calculator">Functions</legend>
+                        <input type="button" style="height:100px; width:100px;" id="plus" value="+" />
+                        <input type="button" style="height:100px; width:100px;" id="minus" value="-" />
+                        <input type="button" style="height:100px; width:100px;" id="multi" value="*" />
+                        <br />
+                        <input type="button" style="height:100px; width:100px;" id="divide" value="/" />
+                        <input type="button" style="height:100px; width:100px;" id="percent" value="%" />
+                        <input type="button" style="height:100px; width:100px;" id="sroot" value="Square Root" />
+                        <br />
+                        <input type="button" style="height:100px; width:100px;" id="sin" value="sin" />
+                        <input type="button" style="height:100px; width:100px;" id="cos" value="cos" />
+                        <input type="button" style="height:100px; width:100px;" id="tan" value="tan" />
+                    </fieldset>
+                </th>
+                <th>
+                    <fieldset>
+                        <legend class="History">History</legend>
+                        <input type="number" style="height:300px; width:100;" value="" id="history" readonly ">
+                    </fieldset>
+                </th>
+            </table>
+            <table>
+                <th>
+                    <input type="button" style="height:100px; width:100px; " id="equals" value="return"/>
+                </th>
+                <th>
+                    <fieldset>
+                        <legend class="Output">Output</legend>
+                        <input type="number" value="0" id="input1" readonly style="height:50px; width:50px;">
+                        <input type="number" value="0" id="input2" readonly style="height:50px; width:50px;">
+                        <input type="number" value="0" id="inputFunct" readonly style="height:50px; width:50px;">
+                        <input type="text" value="=" id="equals" readonly style="height:50px; width:50px;">
+                        <input type="number" value="0" id="result" readonly style="height:50px; width:50px;">
+                    </fieldset>
+                </th>
+             </table>
+        </section>
+    </main>    
 
     <script type="text/javascript" src="./calc.js"></script>
 </body>
