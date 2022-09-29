@@ -34,3 +34,36 @@ console.log(`Result of 4*31=${mul(4,31)}`);
 
 
 // CALLBACKS
+// function is passed as argument to another function
+const fileComplaint = (mot, tax) => {
+    console.log(`MOT is ${mot} and it is ${tax}`);
+}
+
+const reportStolen = (mot, tax) => {
+    console.log("car is stolen");
+}
+
+const userInput = (callback) => {
+    let regNo = "SK15 LD5"    //promtp("Enter reg");
+    //have request to get mot and tax
+    let motStatus = "in date";
+    let taxStatus = "not taxed";
+    callback(motStatus, taxStatus);
+}
+
+// if user clicks file  complaint
+userInput(fileComplaint);
+// if user reporting stolen
+userInput(reportStolen);
+
+
+// PROMISES - success, failed or pending
+// operation that will take some time to complete
+// example - get data from database:
+const getData = new Promise(resolve, rejected) => {
+    
+}
+
+
+
+
