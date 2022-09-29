@@ -27,4 +27,16 @@ const greet = () => {
     console.log("Hello World");
 }
 
+// either of these 2
 newButton.onclick = greet;
+newButton.addEventListener("click", greet);
+
+
+const div2 = document.querySelector("body > div.divNoid");
+console.log(div2);
+
+// selecting a paragraph within a div
+const para = document.querySelector("body > div.divNoid > p");
+para.innerText = "hello";
+
+
