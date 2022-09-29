@@ -82,7 +82,7 @@ const calculate = () => {
             checkEnd(calcOutput);
             break;
         case ("-"):
-            calcOutput = subtraction(num1,num2);
+            calcOutput = subtract(num1,num2);
             checkEnd(calcOutput);
             break;
         case ("*"):
@@ -134,11 +134,22 @@ const checkEnd = (calculation) => {
 const updateOutput = (value) => {
     const output = document.getElementById("result");
     output.value = value;
-    const historyString = document.getElementById("history");
+    // add new calculation to the history
     historyArr.push(value);
+    console.log(historyArr);
+    const historyDisplay = document.getElementById("history");
     
-
-    historyString.value = historyArr;
+    // run through the history array and display its contents
+    // HISTORY FUNCTION NOT WORKING
+    let forRun = historyArr.length;
+    let newString = ""
+    for (let i=0; i< forRun; i++){
+ 
+        // let stringConversion = historyArr[i].toString();
+        // let historyConversion = historyDisplay.value;
+        // let newString = stringConversion + "\," + historyConversion;
+        historyDisplay.value = historyArr;
+    }
 }
 
 
@@ -177,5 +188,3 @@ const updateOutput = (value) => {
 // console.log(`Tan of 270 = ${tangent(270)}`); // some big number
 // console.log(`Tan of 360 = ${tangent(360)}`); // 0
 // ------------------------------------------
-
-
