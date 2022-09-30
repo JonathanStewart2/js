@@ -80,13 +80,20 @@ const appendData = (data) => {
         personID.innerText = "ID: " + subData[i].id;
         console.log(personID.innerText);
         person.appendChild(personID);
-        dataList.appendChild(person);
 
         let personEmail = document.createElement("p");
         personEmail.innerText = "Email: " + subData[i].email;
         person.appendChild(personEmail);
-        dataList.appendChild(person);
+        
+        let personName = document.createElement("p");
+        personName.innerText = "Name: " + subData[i].first_name + " " + subData[i].last_name;
+        person.appendChild(personName);
 
+        let personImg = document.createElement("img");
+        personImg.src = (`${subData[i].avatar}`);
+        person.appendChild(personImg);
+
+        dataList.appendChild(person);
     }
 }
 
