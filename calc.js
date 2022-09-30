@@ -33,20 +33,24 @@ const sine = (deg) => {
 const cosine = (deg) => {
     let radians = deg * (Math.PI/180);
     let cosOfRad = Math.cos(radians);
-    return cosOfRad;
+    return cosOfRad.toFixed(3);
 };
 
 const tangent = (deg) => {
     let radians = deg * (Math.PI/180);
     let tanOfRad = Math.tan(radians);
-    return tanOfRad;
+    return tanOfRad.toFixed(3);
 };
 
 //---------- GATHER INPUTS
+// GLOBAL ARRAYS
 const inputArr = []
 const funcReq = []
-const historyArr = []
 const numArr = []
+// GLOBAL VARIABLES
+const output = document.getElementById("result");
+const currentCalcOutput = document.getElementById("currentCalc");
+
 
 const createNumber = () => {
     let stringRep = inputArr.join("");
@@ -56,6 +60,7 @@ const createNumber = () => {
     console.log(`numArr is ${numArr}`);
     inputArr.length = 0;
 }
+
 
 const calculate = () => {
     //go through array and pick first values and functions requested
@@ -105,16 +110,19 @@ const calculate = () => {
 
 const inputGather = (value) => {
     // put values inputted into an array
-    //let input = parseInt(value);
     inputArr.push(value);
-    console.log(inputArr);
+    //currentVal = output.value
+    //output.value += value.toString();
+    currentCalcOutput.value += value;
 }
+
 
 const inputFunct = (funct) => {
     // push requested functions into array
     funcReq.push(funct);
-    console.log(funcReq);
+    currentCalcOutput.value += funct;
     createNumber();
+
     if (funct == "sin" || funct == "cos" || funct == "tan" || funct == "sr") { 
         let num = numArr.shift();
         let calcOutput = 0;
@@ -125,9 +133,9 @@ const inputFunct = (funct) => {
                 checkEnd(calcOutput);
                 break;
             case ("sin"):
-                console.log(`Num going into sin calc is ${num}`);
+                //console.log(`Num going into sin calc is ${num}`);
                 calcOutput = sine(num);
-                console.log(`output from sin calc is ${calcOutput}`);
+                //console.log(`output from sin calc is ${calcOutput}`);
                 checkEnd(calcOutput);
                 break;
             case ("cos"):
@@ -145,7 +153,6 @@ const inputFunct = (funct) => {
 
 // check if further calc req
 const checkEnd = (calculation) => {
-    console.log(calculation);
     if (numArr.length == 0){
         updateOutput(calculation);
     } else {
@@ -158,25 +165,31 @@ const checkEnd = (calculation) => {
     }
 }
 
+
 // update the outcome
 const updateOutput = (value) => {
     const output = document.getElementById("result");
     output.value = value;
+
     // add new calculation to the history
-    if (historyArr.length > 10) {
-        historyArr.pop()
-    } 
-    historyArr.push(value);
-    console.log(`HistoryArr is ${historyArr}`);
-    const historyDisplay = document.getElementById("history");
-    let historyString = historyArr.join(" ");
-    console.log(`HistoryString is ${historyString}`);
-    historyDisplay.value = historyString
-    
+    const div = document.getElementById("historyDiv");
+    const historyP = document.createElement("p"); 
+    historyP.innerText = value;
+    div.prepend(historyP);
 
 }
 
 
+// clear all arrays and variables 
+const clearCalc = () => {
+    console.log("clear requested");
+    inputArr.length = 0
+    funcReq.length = 0
+    numArr.length = 0
+    output.value = "";
+    currentCalcOutput.value = "";
+    window.alert("Calculations cleared");
+}
 
 
 
@@ -195,7 +208,7 @@ const updateOutput = (value) => {
 // console.log(squareRootEstimate(100));
 // // testing sine
 // console.log(sine(0)); // 0
-console.log(sine(45)); // 0.7
+//console.log(sine(45)); // 0.7
 // console.log(sine(90)); // 1
 // console.log(sine(180)); // 0
 // console.log(sine(270)); // -1

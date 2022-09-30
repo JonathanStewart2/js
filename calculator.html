@@ -4,69 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Online Calculator</title>
 </head>
 <body>
     <main>
-        <h1>Online Calculator</h1>
-        <section>
-            <table>
-                
+        <table>
+            <tr>
                 <th>
-                    <fieldset>
-                        <legend class="Calculator">Numbers</legend>
-                        <input type="button" onclick=inputGather(7) style="height:100px; width:100px;" id="7" value="7" />
-                        <input type="button" onclick=inputGather(8) style="height:100px; width:100px;" id="8" value="8" />
-                        <input type="button" onclick=inputGather(9) style="height:100px; width:100px;" id="9" value="9" />
-                        <br />
-                        <input type="button" onclick=inputGather(4) style="height:100px; width:100px;" id="4" value="4" />
-                        <input type="button" onclick=inputGather(5) style="height:100px; width:100px;" id="5" value="5" />
-                        <input type="button" onclick=inputGather(6) style="height:100px; width:100px;" id="6" value="6" />
-                        <br />
-                        <input type="button" onclick=inputGather(1) style="height:100px; width:100px;" id="1" value="1" />
-                        <input type="button" onclick=inputGather(2) style="height:100px; width:100px;" id="2" value="2" />
-                        <input type="button" onclick=inputGather(3) style="height:100px; width:100px;" id="3" value="3" />
-                        <br />
-                        <input type="button" onclick=inputGather(0) style="height:100px; width:100px;" id="0" value="0" />
-                    </fieldset>
+                    <h1>Online Calculator &nbsp;&nbsp; </h1>
                 </th>
                 <th>
-                    <fieldset>
-                        <legend class="Calculator">Functions</legend>
-                        <input type="button" onclick=inputFunct("+") style="height:100px; width:100px;" id="plus" value="+" />
-                        <input type="button" onclick=inputFunct("-") style="height:100px; width:100px;" id="minus" value="-" />
-                        <input type="button" onclick=inputFunct("*") style="height:100px; width:100px;" id="multi" value="*" />
-                        <br />
-                        <input type="button" onclick=inputFunct("/") style="height:100px; width:100px;" id="divide" value="/" />
-                        <input type="button" onclick=inputFunct("%") style="height:100px; width:100px;" id="percent" value="%" />
-                        <input type="button" onclick=inputFunct("sr") style="height:100px; width:100px;" id="sroot" value="Square Root" />
-                        <br />
-                        <input type="button" onclick=inputFunct("sin") style="height:100px; width:100px;" id="sin" value="sin" />
-                        <input type="button" onclick=inputFunct("cos") style="height:100px; width:100px;" id="cos" value="cos" />
-                        <input type="button" onclick=inputFunct("tan") style="height:100px; width:100px;" id="tan" value="tan" />
-                    </fieldset>
+                    <legend class="currentCalc">Calculation</legend>
+                    <input type="text" value="" id="currentCalc" readonly style="height:50px; width:200px;">
                 </th>
                 <th>
-                    <fieldset>
-                        <legend class="History">History</legend>
-                        <input type="text" style="height:300px; width:100;" value="" id="history" readonly ">
-                    </fieldset>
+                    <legend class="Output">Output</legend>
+                    <input type="number" value="" id="result" readonly style="height:50px; width:200px;">
                 </th>
+            </tr>           
+            <tr>
+                <td>
+                    <h3>Numbers</h3>
+                    <input type="button" onclick=inputGather(7) style="height:100px; width:100px;" id="7" value="7" />
+                    <input type="button" onclick=inputGather(8) style="height:100px; width:100px;" id="8" value="8" />
+                    <input type="button" onclick=inputGather(9) style="height:100px; width:100px;" id="9" value="9" />
+                    <br />
+                    <input type="button" onclick=inputGather(4) style="height:100px; width:100px;" id="4" value="4" />
+                    <input type="button" onclick=inputGather(5) style="height:100px; width:100px;" id="5" value="5" />
+                    <input type="button" onclick=inputGather(6) style="height:100px; width:100px;" id="6" value="6" />
+                    <br />
+                    <input type="button" onclick=inputGather(1) style="height:100px; width:100px;" id="1" value="1" />
+                    <input type="button" onclick=inputGather(2) style="height:100px; width:100px;" id="2" value="2" />
+                    <input type="button" onclick=inputGather(3) style="height:100px; width:100px;" id="3" value="3" />
+                    <br />
+                    <input type="button" onclick=inputGather(0) style="height:100px; width:100px;" id="0" value="0" />
+                    <input type="button" onclick=inputGather(.) style="height:100px; width:100px;" id="." value="." />
+                </td>
+                <td>
+                    <h3>Functions</h3>
+                    <input type="button" onclick=inputFunct("+") style="height:100px; width:100px;" id="plus" value="+" />
+                    <input type="button" onclick=inputFunct("-") style="height:100px; width:100px;" id="minus" value="-" />
+                    <input type="button" onclick=inputFunct("*") style="height:100px; width:100px;" id="multi" value="*" />
+                    <br />
+                    <input type="button" onclick=inputFunct("/") style="height:100px; width:100px;" id="divide" value="/" />
+                    <input type="button" onclick=inputFunct("%") style="height:100px; width:100px;" id="percent" value="%" />
+                    <input type="button" onclick=inputFunct("sr") style="height:100px; width:100px;" id="sroot" value="Square Root" />
+                    <br />
+                    <input type="button" onclick=inputFunct("sin") style="height:100px; width:100px;" id="sin" value="sin" />
+                    <input type="button" onclick=inputFunct("cos") style="height:100px; width:100px;" id="cos" value="cos" />
+                    <input type="button" onclick=inputFunct("tan") style="height:100px; width:100px;" id="tan" value="tan" />
+                    <br />
+                    <input type="button" onclick=calculate() style="height:100px; width:100px;" id="equals" value="="/>
+                </td> 
+                <td>
+                    <input type="button" onclick=clearCalc() style="height:100px; width:100px;" id="clear" value="Clear" />
+                </td>
+                <tr>
+                    <td>
+                        <h4>History</h4>
+                        <div id="historyDiv">
+
+                        </div>
+                    </td>
+                </tr>
             </table>
-            <table>
-                <th>
-                    <input type="button" onclick=calculate() style="height:100px; width:100px; " id="equals" value="return"/>
-                </th>
-                <th>
-                    <fieldset>
-                        <legend class="Output">Output</legend>
-                        <input type="number" value="0" id="result" readonly style="height:50px; width:50px;">
-                    </fieldset>
-                </th>
-             </table>
-        </section>
+
+
     </main>    
 
     <script type="text/javascript" src="./calc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
