@@ -67,16 +67,11 @@ const calculate = () => {
     if (inputArr){
         createNumber();
     }
-    console.log(numArr);
+    //console.log(numArr);
     let num1 = numArr.shift();
-    console.log(num1);
-    console.log(numArr);
+    //console.log(num1);
+    //console.log(numArr);
 
-    // if (inputArr.length > 0) {
-    //     let num2 = inputArr.shift();    FIX THIS LATER
-    // } else {
-    //     num2 = 0;
-    // }
     let num2 = numArr.shift();
     let request = funcReq.shift();
 

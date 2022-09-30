@@ -26,39 +26,40 @@
             <tr>
                 <td>
                     <h3>Numbers</h3>
-                    <input type="button" onclick=inputGather(7) style="height:100px; width:100px;" id="7" value="7" />
-                    <input type="button" onclick=inputGather(8) style="height:100px; width:100px;" id="8" value="8" />
-                    <input type="button" onclick=inputGather(9) style="height:100px; width:100px;" id="9" value="9" />
+                    <input type="button" onclick=inputGather(7) class="btn btn-outline-primary" style="height:100px; width:100px;" id="7" value="7" />
+                    <input type="button" onclick=inputGather(8) class="btn btn-outline-primary" style="height:100px; width:100px;" id="8" value="8" />
+                    <input type="button" onclick=inputGather(9) class="btn btn-outline-primary" style="height:100px; width:100px;" id="9" value="9" />
                     <br />
-                    <input type="button" onclick=inputGather(4) style="height:100px; width:100px;" id="4" value="4" />
-                    <input type="button" onclick=inputGather(5) style="height:100px; width:100px;" id="5" value="5" />
-                    <input type="button" onclick=inputGather(6) style="height:100px; width:100px;" id="6" value="6" />
+                    <input type="button" onclick=inputGather(4) class="btn btn-outline-primary" style="height:100px; width:100px;" id="4" value="4" />
+                    <input type="button" onclick=inputGather(5) class="btn btn-outline-primary" style="height:100px; width:100px;" id="5" value="5" />
+                    <input type="button" onclick=inputGather(6) class="btn btn-outline-primary" style="height:100px; width:100px;" id="6" value="6" />
                     <br />
-                    <input type="button" onclick=inputGather(1) style="height:100px; width:100px;" id="1" value="1" />
-                    <input type="button" onclick=inputGather(2) style="height:100px; width:100px;" id="2" value="2" />
-                    <input type="button" onclick=inputGather(3) style="height:100px; width:100px;" id="3" value="3" />
+                    <input type="button" onclick=inputGather(1) class="btn btn-outline-primary" style="height:100px; width:100px;" id="1" value="1" />
+                    <input type="button" onclick=inputGather(2) class="btn btn-outline-primary" style="height:100px; width:100px;" id="2" value="2" />
+                    <input type="button" onclick=inputGather(3) class="btn btn-outline-primary" style="height:100px; width:100px;" id="3" value="3" />
                     <br />
-                    <input type="button" onclick=inputGather(0) style="height:100px; width:100px;" id="0" value="0" />
-                    <input type="button" onclick=inputGather(.) style="height:100px; width:100px;" id="." value="." />
+                    <input type="button" onclick=inputGather(0) class="btn btn-outline-primary" style="height:100px; width:100px;" id="0" value="0" />
+                    <input type="button" onclick=inputGather(.) class="btn btn-outline-primary" style="height:100px; width:100px;" id="." value="." />
                 </td>
                 <td>
                     <h3>Functions</h3>
-                    <input type="button" onclick=inputFunct("+") style="height:100px; width:100px;" id="plus" value="+" />
-                    <input type="button" onclick=inputFunct("-") style="height:100px; width:100px;" id="minus" value="-" />
-                    <input type="button" onclick=inputFunct("*") style="height:100px; width:100px;" id="multi" value="*" />
+                    <input type="button" onclick=inputFunct("+") class="btn btn-outline-warning" style="height:100px; width:100px;" id="plus" value="+" />
+                    <input type="button" onclick=inputFunct("-") class="btn btn-outline-warning" style="height:100px; width:100px;" id="minus" value="-" />
+                    <input type="button" onclick=inputFunct("*") class="btn btn-outline-warning" style="height:100px; width:100px;" id="multi" value="*" />
                     <br />
-                    <input type="button" onclick=inputFunct("/") style="height:100px; width:100px;" id="divide" value="/" />
-                    <input type="button" onclick=inputFunct("%") style="height:100px; width:100px;" id="percent" value="%" />
-                    <input type="button" onclick=inputFunct("sr") style="height:100px; width:100px;" id="sroot" value="Square Root" />
+                    <input type="button" onclick=inputFunct("/") class="btn btn-outline-warning" style="height:100px; width:100px;" id="divide" value="/" />
+                    <input type="button" onclick=inputFunct("%") class="btn btn-outline-warning" style="height:100px; width:100px;" id="percent" value="%" />
+                    <input type="button" onclick=inputFunct("sr") class="btn btn-outline-warning" style="height:100px; width:100px;" id="sroot" value="Square Root" />
                     <br />
-                    <input type="button" onclick=inputFunct("sin") style="height:100px; width:100px;" id="sin" value="sin" />
-                    <input type="button" onclick=inputFunct("cos") style="height:100px; width:100px;" id="cos" value="cos" />
-                    <input type="button" onclick=inputFunct("tan") style="height:100px; width:100px;" id="tan" value="tan" />
+                    <input type="button" onclick=inputFunct("sin") class="btn btn-outline-warning" style="height:100px; width:100px;" id="sin" value="sin" />
+                    <input type="button" onclick=inputFunct("cos") class="btn btn-outline-warning" style="height:100px; width:100px;" id="cos" value="cos" />
+                    <input type="button" onclick=inputFunct("tan") class="btn btn-outline-warning" style="height:100px; width:100px;" id="tan" value="tan" />
                     <br />
-                    <input type="button" onclick=calculate() style="height:100px; width:100px;" id="equals" value="="/>
+                    
+                    <input type="button" onclick=calculate() class="btn btn-success" style="height:100px; width:100px;" id="equals" value="="/>
                 </td> 
                 <td>
-                    <input type="button" onclick=clearCalc() style="height:100px; width:100px;" id="clear" value="Clear" />
+                    <input type="button" onclick=clearCalc() class="btn btn-danger" style="height:100px; width:100px;" id="clear" value="Clear" />
                 </td>
                 <tr>
                     <td>
@@ -69,6 +70,7 @@
                     </td>
                 </tr>
             </table>
+
 
 
     </main>    
